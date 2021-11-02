@@ -1,8 +1,9 @@
 import unittest
-from main import Employee
+
+from employee import Employee
 
 class TestEmployee(unittest.TestCase):
-  """Test cases for Employee Class"""
+  """Test cases for checking the behaviour of the Employee Class"""
   def setUp(self):
     f_name = "Ram"
     l_name = "Charan"
@@ -12,12 +13,12 @@ class TestEmployee(unittest.TestCase):
   def test_give_default_raise(self):
     """Tests that a default raise of 5000 is applied to Employee's salary"""
     self.employee.give_raise()
-    assertEqual(self.employee.salary, 25000)
+    self.assertEqual(self.employee.salary, 25000)
 
   def test_give_custom_raise(self):
     """Tests that a custom raise is accounted properly in Employee's salary"""
     self.employee.give_raise(2000)
-    assertEqual(self.employee.salary, 22000)
+    self.assertEqual(self.employee.salary, 22000)
     print("test passed!")
 
 if __name__ == '__main__':
